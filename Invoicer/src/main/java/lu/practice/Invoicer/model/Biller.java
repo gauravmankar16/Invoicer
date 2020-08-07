@@ -14,6 +14,15 @@ public class Biller {
     private String email;
     private String phoneNumber;
     private UnpackName name;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public UnpackName getName() {
         return name;

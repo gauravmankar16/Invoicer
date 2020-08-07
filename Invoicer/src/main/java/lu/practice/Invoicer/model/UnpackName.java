@@ -1,15 +1,24 @@
 package lu.practice.Invoicer.model;
 
 public class UnpackName {
-    public UnpackFullName getFullName() {
-        return fullName;
+    private String fName;
+    private String lName;
+
+    public String getfName() {
+        return fName;
     }
 
-    public void setFullName(UnpackFullName fullName) {
-        this.fullName = fullName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    private UnpackFullName fullName;
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
 
 
 }
