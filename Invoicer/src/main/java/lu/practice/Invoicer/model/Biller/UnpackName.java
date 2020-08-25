@@ -1,6 +1,6 @@
-package lu.practice.Invoicer.model;
+package lu.practice.Invoicer.model.Biller;
 
-public class UnpackFullName {
+public class UnpackName {
     private String fName;
     private String lName;
 
@@ -19,4 +19,6 @@ public class UnpackFullName {
     public void setlName(String lName) {
         this.lName = lName;
     }
+
+
 }

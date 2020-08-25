@@ -1,13 +1,10 @@
-package lu.practice.Invoicer.model;
+package lu.practice.Invoicer.model.Biller;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Map;
-
-@Document(collection = "Biller")
+@Document(collection = "BillerNew")
 public class Biller {
     @Id
     private ObjectId _id;
@@ -55,4 +52,5 @@ public class Biller {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }
