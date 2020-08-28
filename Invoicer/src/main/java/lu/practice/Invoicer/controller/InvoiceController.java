@@ -9,6 +9,8 @@ import lu.practice.Invoicer.repo.InvoiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Instant;
+
 @RestController
 public class InvoiceController {
     @Autowired
@@ -27,6 +29,10 @@ public class InvoiceController {
         String userName = jwtTokenUtil.getUsernameFromToken(token);
         Biller biller = billerRepo.findByEmail(userName);
         invoice.setCreatedBy(biller.getId());
+        invoice.setCreatedOn(Instant.now());
+        if(invoice.getDueDate() != null) {
+            invoice.setDueDate(Instant.parse(invoice.getDueDate().toString()));
+        }
         return invoiceRepo.save(invoice);
     }
 
@@ -36,5 +42,10 @@ public class InvoiceController {
         Biller biller = billerRepo.findByEmail(userName);
         long invoiceNumber = invoiceRepo.countByCreatedBy(biller.getId()) + 1;
         return invoiceNumber;
+    }
+
+    @GetMapping(value = "/api/getInvoiceData/{id}")
+    public Invoice getOne(@PathVariable String id){
+        return invoiceRepo.findById(id).get();
     }
 }
