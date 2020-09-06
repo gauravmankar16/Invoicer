@@ -47,6 +47,16 @@
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.jhonnymertz</groupId>
+			<artifactId>java-wkhtmltopdf-wrapper</artifactId>
+			<version>1.1.12-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.htmlcleaner</groupId>
+			<artifactId>htmlcleaner</artifactId>
+			<version>2.6.1</version>
+		</dependency>
 
 
 		<dependency>
